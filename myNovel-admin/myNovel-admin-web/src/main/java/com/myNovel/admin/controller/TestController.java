@@ -78,6 +78,7 @@ public class TestController {
 		List<TestUser> list = new ArrayList<TestUser>();
 		list.add(testUser);
 		list.add(testUser1);
+		/** 测试提交的注解*/
 		testService.insertList(list);
 	}
 
