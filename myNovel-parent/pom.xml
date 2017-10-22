@@ -1,0 +1,167 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.myNovel</groupId>
+	<artifactId>myNovel-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<description>这是一个父工程,用来管理jar包的版本</description>
+
+	<properties>
+		<spring.version>4.3.3.RELEASE</spring.version>
+		<!-- 测试组件 -->
+		<junit.version>4.12</junit.version>
+		<!-- 能够使用EL表达式 -->
+		<jstl.version>1.2</jstl.version>
+		<!-- jsp servlet servlet-api、jsp-api、el-api 这个依赖容器会提供,属于provided的范围 -->
+		<jsp.api.version>7.0.76</jsp.api.version>
+		<!-- mybatis的依赖jar包以及和spring的整合包 -->
+		<mybatis.version>3.4.1</mybatis.version>
+		<mybatis.spring.version>1.3.1</mybatis.spring.version>
+		<!-- 分页插件 -->
+		<pagehelper.version>5.0.0</pagehelper.version>
+		<mapper.version>3.4.0</mapper.version>
+		<c3p0.version>0.9.5.2</c3p0.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<commons-logging.version>1.2</commons-logging.version>
+		<jackson.version>2.8.5</jackson.version>
+		<mysql.version>5.1.38</mysql.version>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<commons-io.version>1.3.2</commons-io.version>
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+		<commons-codec.version>1.9</commons-codec.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Spring4 -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<!-- test测试工具类 -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- jstl标准标签库 -->
+			<dependency>
+				<groupId>jstl</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${jstl.version}</version>
+			</dependency>
+
+			<!-- servlet-api、jsp-api、el-api -->
+			<dependency>
+				<groupId>org.apache.tomcat</groupId>
+				<artifactId>tomcat-jsp-api</artifactId>
+				<version>${jsp.api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- MyBatis3 -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis.spring.version}</version>
+			</dependency>
+
+			<!-- 分页插件 -->
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper</artifactId>
+				<version>${pagehelper.version}</version>
+			</dependency>
+
+			<!-- 通用Mapper -->
+			<dependency>
+				<groupId>tk.mybatis</groupId>
+				<artifactId>mapper</artifactId>
+				<version>${mapper.version}</version>
+			</dependency>
+
+
+			<!-- 连接池 -->
+			<dependency>
+				<groupId>com.mchange</groupId>
+				<artifactId>c3p0</artifactId>
+				<version>${c3p0.version}</version>
+			</dependency>
+
+			<!-- 日志 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<!-- 日志 -->
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${commons-logging.version}</version>
+			</dependency>
+			<!-- Jackson JSON处理工具包 -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<!-- MySql -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+
+			<!-- apache工具组件 -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+			<!-- 文件上传组件 -->
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
+			<!-- 加密解密 -->
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
